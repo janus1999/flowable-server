@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.janus.system.dao.UserMapper">
+	<select id="getUserInfo" resultType="org.janus.system.model.User">
+		select * from sys_user where user_code=#{userCode} and user_id=user_code
+	</select>
+	
+	<select id="selectUserRoles" resultType="org.janus.system.model.Role">
+		select a.* from sys_role a 
+		left join sys_role_user b on a.role_id=b.role_id
+		where b.user_code=#{userCode}
+	</select>
+</mapper>
