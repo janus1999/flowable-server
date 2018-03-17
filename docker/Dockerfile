@@ -1,6 +1,6 @@
 FROM airdock/oracle-jdk
 
-ADD target/server*.jar /opt
+ADD ../target/server*.jar /opt
 
 EXPOSE 8990 8990
 
